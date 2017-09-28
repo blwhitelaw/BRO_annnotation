@@ -12,5 +12,5 @@ These are provided as an RStudio project `BRO_annotation.Rproj` and associated R
 
 # Step 1 : PASA
 
-[Install](PASA/InstallPASA) and [run the PASA pipeline](PASA/RunPasa)
+[Install](PASA/InstallPASA.md) and [run the PASA pipeline](PASA/RunPasa.md)
 
