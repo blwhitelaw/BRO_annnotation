@@ -2,3 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+
+*.fasta
+*.fasta.fai
+*.txt
