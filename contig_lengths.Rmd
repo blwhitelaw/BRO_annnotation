@@ -1,0 +1,46 @@
+---
+title: "Contig Lengths"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Analysis of contig lengths in the dovetail assembly
+
+First read in the contig length data and add 
+
+```{r}
+total_genome_size <- 4009599824.0
+
+contig_lengths <- read_table2("assembly_data/hmac_dovetail_assembly.lengths.txt", col_names = c("Contig","Length")) %>% 
+  mutate(GenomeSize=cumsum(as.numeric(Length))) %>% 
+  mutate(GenomeProportion=GenomeSize/total_genome_size) %>% 
+  add_column(rank=1:nrow(contig_lengths))
+```
+
+A histogram of contig lengths reveals that the vast majority are small
+
+```{r}
+ggplot(contig_lengths,aes(x=Length)) + geom_histogram()
+```
+
+Plot cumulative genome size against a sorted list of contigs.  This helps think about a sensible length cut-off for short contigs and summarises the contiguity of the genome
+
+```{r}
+ggplot(contig_lengths,aes(x=as.numeric(rank),y=GenomeProportion)) + geom_line() 
+```
+
+```{r}
+contig_lengths %>% filter(GenomeProportion>0.96) %>% count()
+```
+How much of the genome would we lose by removing contigs less than 50kb in size?.  This would remove about 5% of the assembly contained within 32342 contigs.
+
+```{r}
+cut_off <- 50000
+100*(contig_lengths %>% filter(Length<cut_off) %>% pull(Length) %>% sum())/total_genome_size
+
+contig_lengths %>% filter(Length<cut_off) %>% count()
+```
