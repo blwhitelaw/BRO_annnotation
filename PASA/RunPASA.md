@@ -2,6 +2,16 @@
 
 These instructions should be run on a machine with PASA installed
 
+In order to do preliminary steps (Genome cleanup) bioawk is also needed. This can be installed with
+
+```bash
+sudo apt-get install git bison
+git clone https://github.com/lh3/bioawk.git
+cd bioawk
+make
+mv bioawk maketab ~/bin/
+```
+
 ## Import data
 
 Assuming we have a sister folder `assembly_data` we create symbolic links to raw assemblies as follows
