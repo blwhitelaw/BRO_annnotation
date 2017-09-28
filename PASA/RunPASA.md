@@ -35,5 +35,5 @@ cd ..
 Now run the gmap_build command.  It is important that the name of the database match the name that PASA expects
 
 ```bash
-
+nohup gmap_build -D . -d hmac_dovetail_assembly_20k.fasta.gmap contigs/*.fasta > gmap_build.log &
 ```

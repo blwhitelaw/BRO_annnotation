@@ -143,8 +143,27 @@ If a test run fails delete the dblike this
 mysqladmin drop sample_mydb_pasa -u root --password=b28TZKwX
 ```
 
+Since the mysql database can get very large we move it to a larger partition.  This is necessary on Nectar images where the root partition is quite small
 
+```bash
+sudo stop mysql
+sudo rsync -a /var/lib/mysql /mnt/
 
+```
+
+Edit `/etc/mysql/my.cnf` to update the datadir entry
+
+Backup the old datadir
+
+```bash
+sudo mv mysql mysql.bak
+```
+
+Update apparmour
+
+```
+echo "alias /var/lib/mysql/ -> /mnt/mysql/," >> /etc/apparmor.d/tunables/alias
+```
 
 
 
