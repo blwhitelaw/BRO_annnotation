@@ -47,3 +47,13 @@ Now run the gmap_build command.  It is important that the name of the database m
 ```bash
 nohup gmap_build -D . -d hmac_dovetail_assembly_20k.fasta.gmap contigs/*.fasta > gmap_build.log &
 ```
+
+
+Run PASA
+
+```bash
+${PASAHOME}/scripts/Launch_PASA_pipeline.pl -c pasa.annotationCompare.conf -C -R -g hmac_dovetail_assembly.fasta \
+ -t hapalochlaena_maculosa_na.fasta --ALIGNERS gmap,blat --CPU 2
+ ```
+
+

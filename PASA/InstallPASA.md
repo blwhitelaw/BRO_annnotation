@@ -140,7 +140,7 @@ cd $PASAHOME/sample_data
 If a test run fails delete the dblike this
 
 ```
-mysqladmin drop sample_mydb_pasa -u root --password=b28TZKwX
+mysqladmin drop bro_pasa -u root --password=b28TZKwX
 ```
 
 Since the mysql database can get very large we move it to a larger partition.  This is necessary on Nectar images where the root partition is quite small
