@@ -56,4 +56,9 @@ ${PASAHOME}/scripts/Launch_PASA_pipeline.pl -c pasa.annotationCompare.conf -C -R
  -t hapalochlaena_maculosa_na.fasta --ALIGNERS gmap,blat --CPU 2
  ```
 
+Extract ORFs for use as a training set in downstream analysis (Augustus)
+
+```bash
+${PASAHOME}/scripts/pasa_asmbls_to_training_set.dbi --pasa_transcripts_fasta bro_pasa.assemblies.fasta --pasa_transcripts_gff3 bro_pasa.pasa_assemblies.gff3
+```
 
