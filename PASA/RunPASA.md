@@ -49,7 +49,7 @@ nohup gmap_build -D . -d hmac_dovetail_assembly_20k.fasta.gmap contigs/*.fasta >
 ```
 
 
-Run PASA
+## Run PASA
 
 ```bash
 ${PASAHOME}/scripts/Launch_PASA_pipeline.pl -c pasa.annotationCompare.conf -C -R -g hmac_dovetail_assembly.fasta \
