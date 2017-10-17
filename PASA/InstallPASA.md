@@ -107,9 +107,19 @@ Setup PASA Web portal
 ```
 	sudo apt-get install apache2
 	sudo apt-get install libgd-perl
+	sudo apt-get install cpanminus
+	sudo cpanm URI::Escape
+
 	cd /etc/apache2/mods-enabled/
 	ln -s ../mods-available/cgi.load .
 	sudo service apache2 reload
+
+	sudo cp -r ${PASAHOME} /usr/lib/cgi-bin/
+	cd /usr/lib/cgi-bin/
+	chmod -R 755 ./PASA/
+```
+
+
 ```
 
 Configure PASA
