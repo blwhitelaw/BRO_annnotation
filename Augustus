@@ -1,0 +1,12 @@
+Installation 
+
+```
+wget http://bioinf.uni-greifswald.de/augustus/binaries/augustus-3.3.tar.gz
+
+tar -xzvf augustus-3.3.tar.gz
+
+export AUGUSTUS_CONFIG_PATH=~/bro_annotation/augustus/config/
+
+export PATH=$PATH:~/bro_annotation/augustus/bin:~/bro_annotation/augustus/scripts/
+```
+
