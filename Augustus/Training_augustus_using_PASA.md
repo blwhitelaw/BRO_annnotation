@@ -1,12 +1,13 @@
 ## Training augustus 
 
 ```
-Training set .gff3 produced from PASA is incompatible with the current version of augustus and cannot be used as a hints file. 
-However, the augustus can still be trained by creating a custom species using the RNA based training file produced from the PASA pipeline
+Training set .gff3 produced from PASA is incompatible with the current version of 
+augustus and cannot be used as a hints file. However, augustus can still be trained
+by creating a custom "species" using the RNA based training file produced from the PASA pipeline
 
 Perl scrips provided in the augusts package will be required
 
-##Preperation
+## Preperation
 
 1. Convert gff3 to genbank format 
 ```
@@ -27,7 +28,7 @@ outputs : hmac_dovetail_assembly.gb.test & hmac_dovetail_assembly.gb.train
 grep -c LOCUS hmac_dovetail_assembly.gb*
 ```
 
-##Training
+## Training
 
 1. Create a species file
 ```
