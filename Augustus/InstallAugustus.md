@@ -5,7 +5,7 @@
 ```
 wget http://bioinf.uni-greifswald.de/augustus/binaries/augustus-3.3.tar.gz
 ```
-2. unpack
+2. Unpack
 
 ```
 tar -xzvf augustus-3.3.tar.gz
@@ -21,7 +21,7 @@ auxprogs
 docs
 
 ```
-3. compile
+3. Compile
 
 ```
 Install dependencies:
