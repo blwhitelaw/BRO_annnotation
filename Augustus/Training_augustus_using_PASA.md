@@ -47,9 +47,11 @@ tee can be used to save standard output while it keeps printing on the screen.
 
 augustus --species=h_mac hmac_dovetail_assembly.gb.test | tee test_h_mac.out
 
+
 After first training, the sensitivity and specificity can be evaluated.
 
 grep -A 22 Evaluation test_h_mac.out
+
 
 Results can be compared agains gene predictuion using the species provided by augustus such as human and fly.
 Using human/fly/other parameters:
@@ -60,6 +62,7 @@ grep -A 22 Evaluation test_h_mac_human.out
 augustus --species=fly hmac_dovetail_assembly.gb.test | tee test_h_mac_fly.out
 grep -A 22 Evaluation test_h_mac_fly.out
 
+
 Quote from AUGUSTUS tutorial:
 "If the gene level sensitivity is below 20% it is likely that the training set is not large enough, that it doesn't have a good quality or that the species is somehow 'special'."
 ```
@@ -67,11 +70,6 @@ Quote from AUGUSTUS tutorial:
 4. Opitimization
 ```
 For 12–24 rounds of training optimization, it takes about 7–14 days and at least 8 Gb of RAM.
-
-nohup perl ~/optimize_augustus.pl \
---species=hmac hmac_dovetail_assembly.gb.train \
---rounds=12 \
---cpus=8 &
 
 nohup perl ~/bro_annotation/augustus/scripts/optimize_augustus.pl \
 --species=hmac hmac_dovetail_assembly.gb.train \
