@@ -1,7 +1,7 @@
 ## Training augustus 
 
 ```
-Training set .gff3 produced from PASA is incompatible with the current version of 
+The Training set .gff3 produced from PASA is incompatible with the current version of 
 augustus and cannot be used as a hints file. However, augustus can still be trained
 by creating a custom "species" using the RNA based training file produced from the PASA pipeline
 
