@@ -1,15 +1,14 @@
-##Installation 
+## Install Ausgustus 
 
 
-#1. Download
+1. Download
 ```
 wget http://bioinf.uni-greifswald.de/augustus/binaries/augustus-3.3.tar.gz
 ```
-#2. unpack
+2. unpack
 
 ```
 tar -xzvf augustus-3.3.tar.gz
-```
 
 The tar-archive contains one directory 'augustus-3.3' with the following sub-directories:
 bin
@@ -21,8 +20,10 @@ scripts
 auxprogs
 docs
 
-#3. compile
+```
+3. compile
 
+```
 Install dependencies:
 	
    - To turn on the optional support of gzip compressed input files you
@@ -53,7 +54,8 @@ Compiling bam2hints and filterBam requires:
 
 make
 
-#4. Set path 
+```
+4. Set path 
 ```
 export AUGUSTUS_CONFIG_PATH=~/bro_annotation/augustus/config/
 
