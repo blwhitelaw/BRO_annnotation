@@ -24,7 +24,7 @@ perl ~/bro_annotation/augustus/scripts/randomSplit.pl hmac_dovetail_assembly.gb 
 outputs : hmac_dovetail_assembly.gb.test & hmac_dovetail_assembly.gb.train
 ```
 
-3. Quality check for training file: provides number of genes
+3. Quality check training file (provides number of genes)
 ```
 grep -c LOCUS hmac_dovetail_assembly.gb*
 ```
