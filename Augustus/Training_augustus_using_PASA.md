@@ -6,6 +6,7 @@ augustus and cannot be used as a hints file. However, augustus can still be trai
 by creating a custom "species" using the RNA based training file produced from the PASA pipeline
 
 Perl scrips provided in the augusts package will be required
+```
 
 ## Preperation
 
