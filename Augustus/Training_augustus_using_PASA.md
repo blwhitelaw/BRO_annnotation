@@ -72,7 +72,7 @@ Quote from AUGUSTUS tutorial:
 For 12–24 rounds of training optimization, it takes about 7–14 days and at least 8 Gb of RAM.
 
 nohup perl ~/bro_annotation/augustus/scripts/optimize_augustus.pl \
---species=hmac hmac_dovetail_assembly.gb.train \
+--species=h_mac hmac_dovetail_assembly.gb.train \
 --rounds=12 \
 --cpus=8 &
 ```
