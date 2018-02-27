@@ -6,11 +6,7 @@ RUN apt-get update \
 
 # Install samtools
 
-RUN apt-get install -y python unzip gcc make bzip2 zlib1g-dev ncurses-dev
-
-ADD samtools-0.1.19.tar.bz2 samtools.tar.bz2
-
-RUN bunzip2 samtools.tar.bz2 \
+RUN apt-get install -y python unzip gcc make bzip2 zlib1g-dev ncurses-dev \
 	&& apt-get install samtools
 
 
