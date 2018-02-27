@@ -3,11 +3,35 @@ FROM ubuntu:16.04
 RUN apt-get update \
 	&& apt-get install -y build-essential wget zlib1g-dev
 
+
+# Install samtools
+
+RUN apt-get install -y python unzip gcc make bzip2 zlib1g-dev ncurses-dev
+
+ADD samtools-0.1.19.tar.bz2 samtools.tar.bz2
+
+RUN bunzip2 samtools.tar.bz2 \
+	&& tar xf samtools.tar \
+	&& mv samtools-0.1.19 samtools \
+	&& cd samtools \
+	&& make
+
+
+#install bioawk
+
+RUN apt-get install git build-essential bison zlib1g-dev \
+  && git clone https://github.com/lh3/bioawk.git \
+  && cd bioawk \
+  && make \
+  && mv bioawk maketab /user/local/bin/ 
+
+
+
 # Install gmap
 
-RUN wget http://research-pub.gene.com/gmap/src/gmap-gsnap-2015-12-31.v10.tar.gz \
-	&& tar -zxvf gmap-gsnap-2015-12-31.v10.tar.gz \
-	&& cd gmap-2015-12-31 \
+RUN wget http://research-pub.gene.com/gmap/src/gmap-gsnap-2018-02-12.tar.gz \
+	&& tar -zxvf gmap-gsnap-2018-02-12.tar.gz \
+	&& cd gmap-2018-02-12 \
 	&& ./configure \
 	&& make \
 	&& make check \
