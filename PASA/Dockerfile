@@ -16,7 +16,7 @@ RUN apt-get install -y git build-essential bison zlib1g-dev \
   && git clone https://github.com/lh3/bioawk.git \
   && cd bioawk \
   && make \
-  && mv bioawk maketab /user/local/bin/ 
+  && mv bioawk maketab /user/bin/ 
 
 
 
