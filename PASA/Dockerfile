@@ -11,15 +11,12 @@ RUN apt-get install -y python unzip gcc make bzip2 zlib1g-dev ncurses-dev
 ADD samtools-0.1.19.tar.bz2 samtools.tar.bz2
 
 RUN bunzip2 samtools.tar.bz2 \
-	&& tar xf samtools.tar \
-	&& mv samtools-0.1.19 samtools \
-	&& cd samtools \
-	&& make
+	&& apt-get install samtools
 
 
 #install bioawk
 
-RUN apt-get install git build-essential bison zlib1g-dev \
+RUN apt-get install -y git build-essential bison zlib1g-dev \
   && git clone https://github.com/lh3/bioawk.git \
   && cd bioawk \
   && make \
