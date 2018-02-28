@@ -20,6 +20,16 @@ RUN apt-get install -y git build-essential bison zlib1g-dev \
   && cd bioawk \
   && make \
 
+# Install gmap
+
+RUN wget http://research-pub.gene.com/gmap/src/gmap-gsnap-2018-02-12.tar.gz \
+	&& tar -zxvf gmap-gsnap-2018-02-12.tar.gz \
+	&& cd gmap-2018-02-12 \
+	&& ./configure \
+	&& make \
+	&& make check \
+	&& make install
+
 
 # Install BLAT
 
