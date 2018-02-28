@@ -8,7 +8,7 @@ RUN apt-get update \
 
 RUN apt-get install -y python unzip gcc make bzip2 zlib1g-dev ncurses-dev 
 
-RUN apt-get install samtools
+RUN apt-get install -y samtools
 
 
 
@@ -17,7 +17,7 @@ RUN apt-get install samtools
 #install bioawk
 
 RUN apt-get install -y git build-essential bison zlib1g-dev \
-  && apt-get install byacc git \
+  && apt-get install -y byacc git \
   && git clone https://github.com/lh3/bioawk.git \
   && cd bioawk \
   && make \
