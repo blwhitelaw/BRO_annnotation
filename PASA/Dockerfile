@@ -14,11 +14,11 @@ RUN apt-get install -y samtools
 
 #install bioawk
 
-RUN apt-get install -y git build-essential bison zlib1g-dev \
-  && apt-get install -y byacc git \
-  && git clone https://github.com/lh3/bioawk.git \
-  && cd bioawk \
-  && make \
+#RUN apt-get install -y git build-essential bison zlib1g-dev \
+ # && apt-get install -y byacc git \
+  #&& git clone https://github.com/lh3/bioawk.git \
+  #&& cd bioawk \
+  #&& make \
 
 # Install gmap
 
