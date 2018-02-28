@@ -14,26 +14,11 @@ RUN apt-get install -y samtools
 
 #install bioawk
 
-#install bioawk
-
 RUN apt-get install -y git build-essential bison zlib1g-dev \
   && apt-get install -y byacc git \
   && git clone https://github.com/lh3/bioawk.git \
   && cd bioawk \
   && make \
- 
-
-
-
-# Install gmap
-
-RUN wget http://research-pub.gene.com/gmap/src/gmap-gsnap-2018-02-12.tar.gz \
-	&& tar -zxvf gmap-gsnap-2018-02-12.tar.gz \
-	&& cd gmap-2018-02-12 \
-	&& ./configure \
-	&& make \
-	&& make check \
-	&& make install
 
 
 # Install BLAT
