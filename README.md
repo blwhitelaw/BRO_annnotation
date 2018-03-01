@@ -29,10 +29,16 @@ Start a mysql image to run the database. The `-v` option will use a specific doc
 sudo docker run --name pasamysql --env-file mysql.env -v pasamysql-vol:/var/lib/mysql -d mysql:5
 ```
 
-After the mysql image is running you can start the broannotation image. The `--link` option will allow the broannotation image to access the mysql image regardless of the IP address that the mysql image gets.
+After the mysql image is running you can start the broannotation image. Run the image within the folder that contains all of the necessary files, in this case the folder is called PASA. The `--link` option will allow the broannotation image to access the mysql image regardless of the IP address that the mysql image gets. The `- v ` option will link a directory called PASA where files can be made accessible to the docker container. 
 
 ```bash
-docker run -it --link pasamysql:mysql iracooke:broannotation
+docker run -d -it --link pasamysql:mysql -v (pwd):/PASA iracooke:broannotation
+```
+
+In order to access the container run the code below with the appropriate name. The name can be accessed by running `sudo docker ps`.
+
+```bash
+sudo docker sudo docker exec -it "container name" bash
 ```
 
 Test that it worked by running the following commands from within the broannotation image.
