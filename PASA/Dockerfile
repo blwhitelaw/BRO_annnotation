@@ -14,15 +14,15 @@ RUN apt-get install -y samtools
 
 #install bioawk
 
-#RUN apt-get install -y byacc git \
-#	&& git clone https://github.com/lh3/bioawk.git \
-#	&& cd bioawk \
-#	&& make \
-#	&& mv bioawk /usr/local/bin/
+RUN apt-get install -y byacc git \
+	&& git clone https://github.com/lh3/bioawk.git \
+	&& cd bioawk \
+	&& make \
+	&& mv bioawk /usr/local/bin/
 
 # Install gmap
 
-RUN wget http://research-pub.gene.com/gmap/src/gmap-gsnap-2015-12-31.v10.tar.gz \
+RUN wget http://research-pub.gene.com/gmap/src/gmap-gsnap-2015-12-31.tar.gz \
 	&& tar -zxvf gmap-gsnap-2015-12-31.tar.gz \
 	&& cd gmap-2015-12-31 \
 	&& ./configure \
