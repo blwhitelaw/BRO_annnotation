@@ -14,10 +14,11 @@ RUN apt-get install -y samtools
 
 #install bioawk
 
-#RUN apt-get install -y byacc git \
-  #&& git clone https://github.com/lh3/bioawk.git \
-  #&& cd bioawk \
-  #&& make \
+RUN apt-get install -y byacc git \
+	&& git clone https://github.com/lh3/bioawk.git \
+	&& cd bioawk \
+	&& make \
+	&& mv bioawk /usr/local/bin/
 
 # Install gmap
 
