@@ -22,7 +22,7 @@ RUN apt-get install -y byacc git \
 
 # Install gmap
 
-RUN wget http://research-pub.gene.com/gmap/src/gmap-gsnap-2018-02-12.tar.gz \
+RUN wget http://research-pub.gene.com/gmap/src/gmap-gsnap-2015-12-31.v10.tar.gz \
 	&& tar -zxvf gmap-gsnap-2018-02-12.tar.gz \
 	&& cd gmap-2018-02-12 \
 	&& ./configure \
