@@ -9,7 +9,7 @@ http://bioinf.uni-greifswald.de/bioinf/wiki/pmwiki.php?n=IncorporatingRNAseq.Top
 http://bioinf.uni-greifswald.de/bioinf/wiki/pmwiki.php?n=Augustus.IncorporateRepeats
 
 
-##Repeat masker 
+## Repeat masker 
 
 1. Use RepeatMasker to generate repeat .gff file to create hints files
 
@@ -19,7 +19,7 @@ cat hmac_dovetail_assembly.fasta.out | tail -n +3 | perl -ne 'chomp; s/^\s+//; @
 print $t[4]."\t"."repmask\tnonexonpart\t".$t[5]."\t".$t[6]."\t0\t.\t.\tsrc=RM\n";' | sort -n -k 1,1 > repeats_hints.gff
 ```
 
-##Exon hints
+## Exon hints
 
 1. Find
 ```
@@ -36,7 +36,7 @@ nohup /kent/pslCDnaFilter -minId=0.9 -localNearBest=0.005 -ignoreNs -bestOverlap
 perl /usr/local/sci-irc/sw/augustus-3.3/scripts/blat2hints.pl --in=bro-rnaseq.f.psl --out=exon_hints.gff --minintronlen=35 --trunkSS
 ```
 
-##Intron hints (iterative method)
+## Intron hints (iterative method)
 
 #Requires accepted_hits.bam from Trinity output
 
