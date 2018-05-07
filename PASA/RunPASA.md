@@ -52,8 +52,8 @@ nohup gmap_build -D . -d hmac_dovetail_assembly_20k.fasta.gmap contigs/*.fasta >
 ## Run PASA
 
 ```bash
-${PASAHOME}/scripts/Launch_PASA_pipeline.pl -c pasa.annotationCompare.conf -C -R -g hmac_dovetail_assembly.fasta \
- -t hapalochlaena_maculosa_na.fasta --ALIGNERS gmap,blat --CPU 2
+nohup ${PASAHOME}/scripts/Launch_PASA_pipeline.pl -c pasa.alignAssembly.config -C -R --ALT_SPLICE -g hmac_dovetail_assembly_20k.fasta -t hapalochlaena_maculosa_na.fasta --ALIGNERS gmap --CPU 6 -r &
+
  ```
 
 Extract ORFs for use as a training set in downstream analysis (Augustus)
